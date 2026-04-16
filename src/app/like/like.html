@@ -1,0 +1,6 @@
+<span class="glyphicon glyphicon-heart" [class.highlighted]="isActive" (click)="onClick()">
+  <i *ngIf='!isActive' class="bi bi-hand-thumbs-up"></i>
+  <i *ngIf="isActive" class="bi bi-hand-thumbs-up-fill"></i>
+</span>
+
+<span>{{ likesCount }}</span>

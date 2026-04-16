@@ -1,0 +1,49 @@
+<style>
+  .bi {
+    color: blue
+  }
+</style>
+
+<!-- ngContent usage -->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <ng-content select=".heading"></ng-content>
+  </div>
+  <div class="panel-body">
+    <ng-content select=".body"></ng-content>
+  </div>
+</div>
+
+
+<input type="text" [(ngModel)]="txt">
+<br />
+{{ txt | titleCase }}
+<br />
+{{ text | summary:10 }}
+
+<h2>{{ title }}</h2>
+<ul>
+  <li *ngFor="let course of courses">
+    {{ course }}
+  </li>
+</ul>
+
+{{ course.title | uppercase }} <br />
+{{ course.students | number }} <br />
+{{ course.rating | number:'1.2-2' }} <br />
+{{ course.price | currency:'AUD':true:'3.2-2' }} <br />
+{{ course.releaseDate | date:'shortDate' }} <br />
+
+<input #email (keyup.enter)="onKeyUp(email.value)">
+
+<input [(ngModel)]="email2" (keyup.enter)="onKeyUp2()" />
+
+<button [style.background]="isActive ? 'blue':'white'" class='btn btn-primary' [class.active]="isActive"
+  (click)="onSave($event)">
+  Save
+</button>
+<br />
+<button [style.background]="'transparent'" [style.border]="'none'" (click)="onStarChange($event)">
+  <i *ngIf="!starSelected" class="bi bi-star"></i>
+  <i *ngIf="starSelected" class="bi bi-star-fill"></i>
+</button>
