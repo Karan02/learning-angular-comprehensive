@@ -7,6 +7,8 @@ import { Like } from './like/like';
 import { CommonModule } from '@angular/common';
 import { InputFormat } from './input-format.directive';
 import { Zippy } from './zippy/zippy';
+import { ContactForm } from './contact-form/contact-form';
+import { ControlFormAssignment } from './control-form-assignment/control-form-assignment';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +20,9 @@ import { Zippy } from './zippy/zippy';
     Like,
     CommonModule,
     InputFormat,
-    Zippy
+    Zippy,
+    ContactForm,
+    ControlFormAssignment
     ],
   providers:[], // dependencies of components
   templateUrl: './app.html',

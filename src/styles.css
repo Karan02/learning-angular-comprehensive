@@ -11,3 +11,7 @@ body {
   background-color: transparent;
   border: none;
 }
+
+.form-control.ng-touched.ng-invalid {
+  border: 2px solid red;
+}

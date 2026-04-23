@@ -1,0 +1,38 @@
+<form #f="ngForm" (ngSubmit)="submit(f)">
+  <div class="form-group">
+    <label for="courseName">Course Name</label>
+    <input
+      required
+      minlength="5"
+      maxlength="50"
+      ngModel
+      name="courseName"
+      #courseName="ngModel"
+      (change)="log(courseName)"
+      id="courseName"
+      type="text"
+      class="form-control"
+    />
+    <div class="alert alert-danger" *ngIf="courseName.touched && !courseName.valid">
+      <div *ngIf="courseName.errors?.['required']">CourseName is Required</div>
+      <div *ngIf="courseName.errors?.['minlength']">
+        CourseName should minimum {{ courseName.errors?.['minlength'].requiredLength }} characters
+      </div>
+    </div>
+  </div>
+  <!-- How can we bind the selected value of a drop-down list to a complex object, [ngValue]="someObject" -->
+  <div class="form-group">
+    <label for="category">Category</label>
+    <select ngModel name="category" id="category" class="form-control">
+      <option value=""></option>
+      <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+    </select>
+  </div>
+  <div class="checkbox">
+    <label for="hasGuarantee">
+      <input type="checkbox" ngModel name="hasGuarantee" />30-day money back guarantee</label
+    >
+  </div>
+  <p>{{ f.value | json }}</p>
+  <button class="btn btn-primary" [disabled]="!f.valid">Create</button>
+</form>
