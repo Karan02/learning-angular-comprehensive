@@ -10,7 +10,7 @@
     <ng-content select=".heading"></ng-content>
   </div>
   <div class="panel-body">
-    <ng-content select=".body"></ng-content>
+    <ng-content select=".body"></ng-content> <!-- if id then use "#body" -->
   </div>
 </div>
 
@@ -23,14 +23,25 @@
 
 <h2>{{ title }}</h2>
 <ul>
-  <li *ngFor="let course of courses">
-    {{ course }}
+  <li *ngFor="let course of courses; index as i">
+    {{i}} - {{ course }}
+  </li>
+</ul>
+<ul>
+  <li *ngFor="let course of courses; even as isEven">
+    {{ course }} <span *ngIf="isEven">(EVEN)</span>
+  </li>
+</ul>
+<ul>
+  <li *ngFor="let course of courses; trackBy: trackCourse"> <!-- you can use trackBy for updating only after matching specific 
+    condition, saving from rerendering  -->
+    {{ course }} <span>1</span>
   </li>
 </ul>
 
 {{ course.title | uppercase }} <br />
 {{ course.students | number }} <br />
-{{ course.rating | number:'1.2-2' }} <br />
+{{ course.rating | number:'1.2-2' }} <br /> <!-- how many digits before and after decimal -->
 {{ course.price | currency:'AUD':true:'3.2-2' }} <br />
 {{ course.releaseDate | date:'shortDate' }} <br />
 
@@ -38,10 +49,18 @@
 
 <input [(ngModel)]="email2" (keyup.enter)="onKeyUp2()" />
 
+<!--also check hidden-->
+
 <button [style.background]="isActive ? 'blue':'white'" class='btn btn-primary' [class.active]="isActive"
   (click)="onSave($event)">
   Save
 </button>
+<!-- OR We can use style binding using ngStyle for binding multiple styles together -->
+<!-- <button 
+    [style.background]="isActive ? 'blue':'white'" 
+    class='btn btn-primary' 
+    [class.active]="isActive"
+    (click)="onSave($event)"> -->
 <br />
 <button [style.background]="'transparent'" [style.border]="'none'" (click)="onStarChange($event)">
   <i *ngIf="!starSelected" class="bi bi-star"></i>

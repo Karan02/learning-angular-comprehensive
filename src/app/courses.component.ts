@@ -66,6 +66,13 @@ export class CoursesComponent implements OnInit {
   onKeyUp2(){
    console.log(this.email2) // two way binding
   }
+
+  onAdd(){
+    // this.courses.push({ id: 4, name: 'course4' })
+  }
+   trackCourse(index:number,course:any){
+  return  course? course.id : undefined
+  }
 }
 
 export interface FavoriteChangedEventArgs {

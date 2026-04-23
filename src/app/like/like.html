@@ -1,4 +1,14 @@
 <span class="glyphicon glyphicon-heart" [class.highlighted]="isActive" (click)="onClick()">
+  <!-- OR -->
+  <!-- ngClass is used to manage existing attributes -->
+  <!-- 
+  <span [ngClass]="{
+  'glyphicon':true,
+  'glyphicon-heart':true,
+  'highlighted':isActive
+}"
+(click)="onClick()">  -->
+
   <i *ngIf='!isActive' class="bi bi-hand-thumbs-up"></i>
   <i *ngIf="isActive" class="bi bi-hand-thumbs-up-fill"></i>
 </span>
