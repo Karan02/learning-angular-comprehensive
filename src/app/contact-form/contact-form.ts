@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+//template driven form
 @Component({
   selector: 'contact-form',
   imports: [FormsModule,CommonModule],

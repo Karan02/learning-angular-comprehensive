@@ -9,12 +9,16 @@ import { InputFormat } from './input-format.directive';
 import { Zippy } from './zippy/zippy';
 import { ContactForm } from './contact-form/contact-form';
 import { ControlFormAssignment } from './control-form-assignment/control-form-assignment';
+import { SignupFormComponent } from './signup-form/signup-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NewCourseForm } from './new-course-form/new-course-form';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
+    SignupFormComponent,
     CoursesComponent,
     AuthorsComponent,
     Like,
@@ -22,7 +26,8 @@ import { ControlFormAssignment } from './control-form-assignment/control-form-as
     InputFormat,
     Zippy,
     ContactForm,
-    ControlFormAssignment
+    ControlFormAssignment,
+    NewCourseForm
     ],
   providers:[], // dependencies of components
   templateUrl: './app.html',
