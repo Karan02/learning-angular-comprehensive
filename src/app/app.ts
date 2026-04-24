@@ -12,6 +12,7 @@ import { ControlFormAssignment } from './control-form-assignment/control-form-as
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewCourseForm } from './new-course-form/new-course-form';
+import { ChangePasswordComponent } from './change-password-form/change-password.component';
 
 @Component({
   selector: 'app-root',
@@ -27,7 +28,8 @@ import { NewCourseForm } from './new-course-form/new-course-form';
     Zippy,
     ContactForm,
     ControlFormAssignment,
-    NewCourseForm
+    NewCourseForm,
+    ChangePasswordComponent
     ],
   providers:[], // dependencies of components
   templateUrl: './app.html',

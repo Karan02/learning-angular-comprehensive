@@ -8,6 +8,7 @@ import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, FormsM
   templateUrl: './new-course-form.html',
   styleUrl: './new-course-form.css',
 })
+//Reacttive form example 
 export class NewCourseForm {
   // form = new FormGroup({
   //   name: new FormControl('',Validators.required),
