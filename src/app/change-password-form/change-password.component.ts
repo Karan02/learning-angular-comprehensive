@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } 
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+//Reactive forms approach
 @Component({
   selector: 'change-password',
   imports:[FormsModule,CommonModule,ReactiveFormsModule],
